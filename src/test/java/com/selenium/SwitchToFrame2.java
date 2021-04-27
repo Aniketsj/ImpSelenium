@@ -10,7 +10,7 @@ public class SwitchToFrame2 {
 
 	public static void main(String[] args) {
 
-		System.setProperty("webdriver.chrome.driver", "F:\\Programs\\Java\\Practice\\target\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "\\src\\test\\driver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.dream11.com/fantasy-cricket");

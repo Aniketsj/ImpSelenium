@@ -18,12 +18,12 @@ public class SwitchToWindow {
 		
 		Set<String> windows = driver.getWindowHandles();
 		Iterator itr = windows.iterator();
-		System.out.println(windows.size());
+		
 		for (String window : windows) {
 			driver.switchTo().window(window);
 			System.out.println(driver.getTitle());
 			if(driver.switchTo().window(window).getTitle().equalsIgnoreCase("Sykes")){
-				driver.switchTo().window(window);
+//				driver.switchTo().window(window);
 			System.out.println(driver.getTitle());
 			}
 		}

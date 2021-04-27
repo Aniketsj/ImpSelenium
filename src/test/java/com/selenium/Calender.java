@@ -36,13 +36,24 @@ public class Calender {
 		System.out.println("com = " + com);
 		System.out.println(com.equalsIgnoreCase(mon1 + " " + yr1));
 
-		while (!driver.findElement(By.xpath("//div[@class='ui-datepicker-title']")).getText()
-				.equalsIgnoreCase(mon + " " + yr)) {
+//		// one way
+//		while (!driver.findElement(By.xpath("//div[@class='ui-datepicker-title']")).getText()
+//				.equalsIgnoreCase(mon + " " + yr)) {
+//
+//			driver.findElement(By.xpath("//a[@data-handler='next']")).click();
+//
+//		}
+		System.out.println("com = "+com);
+		System.out.println("mon = "+mon);
+		System.out.println("yr = "+yr);
+		
+		System.out.println(com.equalsIgnoreCase(mon + " " + yr));
+		while (com.equalsIgnoreCase(mon + " " + yr)) {
 
 			driver.findElement(By.xpath("//a[@data-handler='next']")).click();
-//			mon1 = driver.findElement(By.xpath("//span[@class='ui-datepicker-month']")).getText();
-//			yr1 = driver.findElement(By.xpath("//span[@class='ui-datepicker-year']")).getText();
-//			com = mon1 + " " + yr1;
+			mon1 = driver.findElement(By.xpath("//span[@class='ui-datepicker-month']")).getText();
+			yr1 = driver.findElement(By.xpath("//span[@class='ui-datepicker-year']")).getText();
+			com = mon1 + " " + yr1;
 		}
 
 		List<WebElement> days = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//tbody//a"));
